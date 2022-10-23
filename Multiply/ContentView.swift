@@ -31,7 +31,6 @@ struct ContentView: View {
                     Text("43°")
                         .font(.system(size: 120, weight: .medium))
                         .foregroundColor(.white)
-                    //efwef
                 }
                 .padding(.bottom, 40)
                 
