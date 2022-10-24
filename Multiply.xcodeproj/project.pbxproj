@@ -7,18 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC564D1F290613E1003030BB /* weatherForTheWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC564D1E290613E1003030BB /* weatherForTheWeek.swift */; };
 		DC5727A6290043DB009B7F10 /* MultiplyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5727A5290043DB009B7F10 /* MultiplyApp.swift */; };
 		DC5727A8290043DB009B7F10 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5727A7290043DB009B7F10 /* ContentView.swift */; };
 		DC5727AA290043DC009B7F10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC5727A9290043DC009B7F10 /* Assets.xcassets */; };
 		DC5727AD290043DC009B7F10 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC5727AC290043DC009B7F10 /* Preview Assets.xcassets */; };
+		DCFDA1472905E81C00842294 /* WeatherButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFDA1462905E81C00842294 /* WeatherButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC564D1E290613E1003030BB /* weatherForTheWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherForTheWeek.swift; sourceTree = "<group>"; };
 		DC5727A2290043DB009B7F10 /* Multiply.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Multiply.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC5727A5290043DB009B7F10 /* MultiplyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplyApp.swift; sourceTree = "<group>"; };
 		DC5727A7290043DB009B7F10 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DC5727A9290043DC009B7F10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC5727AC290043DC009B7F10 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DCFDA1462905E81C00842294 /* WeatherButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			children = (
 				DC5727A5290043DB009B7F10 /* MultiplyApp.swift */,
 				DC5727A7290043DB009B7F10 /* ContentView.swift */,
+				DC564D1E290613E1003030BB /* weatherForTheWeek.swift */,
+				DCFDA1462905E81C00842294 /* WeatherButton.swift */,
 				DC5727A9290043DC009B7F10 /* Assets.xcassets */,
 				DC5727AB290043DC009B7F10 /* Preview Content */,
 			);
@@ -139,6 +145,8 @@
 			files = (
 				DC5727A8290043DB009B7F10 /* ContentView.swift in Sources */,
 				DC5727A6290043DB009B7F10 /* MultiplyApp.swift in Sources */,
+				DC564D1F290613E1003030BB /* weatherForTheWeek.swift in Sources */,
+				DCFDA1472905E81C00842294 /* WeatherButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,39 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var isNight = false
+    
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [.blue, Color("lightBlue")]),
-                           startPoint: .topLeading,
-                           endPoint: .bottomTrailing)
-                .edgesIgnoringSafeArea(.all)
+            BackgroundView(isNight: $isNight)
             VStack {
-                Text("Arlington Heights, IL")
-                    .font(.system(size: 50, weight: .bold, design: .default))
-                    .foregroundColor(Color.white)
-                    .padding(.top, 100)
+            CityTextView(cityName: "Arlington Heights, IL")
                 
+                MainWeatherSatusView(imageName: isNight ? "moon.stars.fill" : "cloud.sun.fill", temperature: 43)
                 
-                VStack(spacing: 15) {
-                    Image(systemName: "cloud.sun.fill")
-                        .renderingMode(.original)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 350, height: 250)
-                    
-                    Text("43°")
-                        .font(.system(size: 120, weight: .medium))
-                        .foregroundColor(.white)
-                }
-                .padding(.bottom, 40)
-                
-                HStack(spacing: 40) {
+                HStack(spacing: 100) {
                     WeatherDayView(dayOfWeek: "SAT",
                                    imageName: "snow",
                                    temperature: 23)
                     
                     WeatherDayView(dayOfWeek: "SUN",
-                                   imageName: "sun.max.fill",
+                                   imageName: isNight ? "moon.stars.fill" : "sun.max.fill",
                                    temperature: 86)
                     
                     WeatherDayView(dayOfWeek: "MON",
@@ -56,7 +41,17 @@ struct ContentView: View {
                                    temperature: 67)
                 }
                 Spacer()
-
+                
+                Button {
+                    isNight.toggle()
+                } label: {
+                    WeatherButton(title: "Change Day Time",
+                                   textColor: .blue,
+                                   backgroundColor: .white)
+                    
+                }
+                
+                Spacer()
             }
         }
     }
@@ -77,16 +72,60 @@ struct WeatherDayView: View {
     var body: some View {
         VStack {
             Text(dayOfWeek)
-                .font(.system(size: 56, weight: .medium, design: .default))
+                .font(.system(size: 27, weight: .medium, design: .default))
                 .foregroundColor(.white)
             Image(systemName: imageName)
                 .renderingMode(.original)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 89, height: 76)
+                .frame(width: 46, height: 76)
             Text("\(temperature)°")
-                .font(.system(size: 56, weight: .medium))
+                .font(.system(size: 27, weight: .medium))
                 .foregroundColor(.white)
         }
+    }
+}
+
+struct BackgroundView: View {
+    
+    @Binding var isNight: Bool
+    
+    var body: some View {
+        LinearGradient(gradient: Gradient(colors: [isNight ? .black : .blue, isNight ? .gray : Color("lightBlue")]),
+                       startPoint: .topLeading,
+                       endPoint: .bottomTrailing)
+        .edgesIgnoringSafeArea(.all)
+    }
+}
+
+struct CityTextView: View {
+    
+    var cityName: String
+    var body: some View {
+        Text(cityName)
+            .font(.system(size: 50, weight: .bold, design: .default))
+            .foregroundColor(Color.white)
+            .padding(.top, 100)
+    }
+}
+
+struct MainWeatherSatusView: View {
+    
+    var imageName: String
+    var temperature: Int
+    
+    var body: some View {
+        VStack(spacing: 15) {
+            Image(systemName: imageName)
+                .renderingMode(.original)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 350, height: 250)
+            
+            Text("\(temperature)º")
+                .font(.system(size: 120, weight: .medium))
+                .foregroundColor(.white)
+        }
+        .padding(.bottom, 20)
     }
 }
